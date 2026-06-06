@@ -1,11 +1,3 @@
-/*
-/// Module: todo_list
-module todo_list::todo_list;
-*/
-
-// For Move coding conventions, see
-// https://docs.sui.io/concepts/sui-move-concepts/conventions
-
 module todo_list::todo_list{
     use sui::object::{Self, UID};
     use sui::tx_context::{Self, TxContext};
