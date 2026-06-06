@@ -3,7 +3,6 @@ module todo_list::todo_list{
     use sui::tx_context::{Self, TxContext};
     use std::vector;
     use sui::transfer;
-    use sui::tx_context::sender;
     use std::string::String;
     use std::string;
 
