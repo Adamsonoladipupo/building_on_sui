@@ -12,9 +12,10 @@ module todo_list::todo_list{
     use std::vector;
     use sui::transfer;
     use sui::tx_context::sender;
+    use std::string::String;
 
     public struct Task has store, drop {
-        title: vector<u8>,
+        title: String,
         completed: bool
     }
 
@@ -48,6 +49,21 @@ module todo_list::todo_list{
     }
 
     public entry fun add_task_entry(list: &mut TodoList, title: vector<u8>){
-        
+        add_task(list, title);
     }
+    public fun complete_task_entry(list: &mut TodoList,index: u64) {
+        complete_task(list, index);
+    }
+
+    public fun remove_task_entry(list: &mut TodoList,index: u64) {
+        remove_task(list, index);
+    }
+    public fun task_count(list: &TodoList): u64 {
+        vector::length(&list.tasks)
+    }
+    public fun is_completed(list: &TodoList,index: u64): bool {
+        let task = vector::borrow(&list.tasks,index);
+        task.completed
+    }
+
 }
