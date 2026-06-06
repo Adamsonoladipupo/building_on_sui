@@ -4,7 +4,6 @@ module todo_list::todo_list{
     use std::vector;
     use sui::transfer;
     use std::string::String;
-    use std::string;
 
     public struct Task has store, drop {
         title: String,
@@ -34,12 +33,12 @@ module todo_list::todo_list{
         vector::remove( &mut list.tasks,index);
     }
 
-    public entry fun create_todo_list(ctx:&mut TxContext){
+    public fun create_todo_list(ctx:&mut TxContext){
         let list = create_list(ctx);
         transfer::transfer(list, tx_context::sender(ctx));
     }
 
-    public entry fun add_task_entry(list: &mut TodoList, title: String){
+    public fun add_task_entry(list: &mut TodoList, title: String){
         add_task(list, title);
     }
 
