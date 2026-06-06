@@ -40,4 +40,8 @@ module todo_list::todo_list{
         let task = vector::borrow_mut(&mut list.tasks, index);
         task.completed = true;
     }
+
+    public fun remove_task(list: &mut TodoList,index: u64) {
+        vector::remove( &mut list.tasks,index);
+    }
 }
