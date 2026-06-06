@@ -33,6 +33,6 @@ module todo_list::todo_list{
 
     public fun add_task(list: &mut TodoList, title: vector<u8>){
         let task = Task {title, completed: false};
-        vector::push_back(&mut list.tasks, task);
+        vector::push_back(&mut list.tasks, task); 
     }
 }
