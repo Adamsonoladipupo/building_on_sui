@@ -58,10 +58,11 @@ module todo_list::todo_list{
     public fun remove_task_entry(list: &mut TodoList,index: u64) {
         remove_task(list, index);
     }
-    
+
     public fun task_count(list: &TodoList): u64 {
         vector::length(&list.tasks)
     }
+    
     public fun is_completed(list: &TodoList,index: u64): bool {
         let task = vector::borrow(&list.tasks,index);
         task.completed
