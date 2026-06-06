@@ -21,7 +21,6 @@ module todo_list::todo_list{
 
     public struct TodoList has key {
         id: UID,
-        // owner: address,
         tasks: vector<Task>
     }
 
