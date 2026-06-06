@@ -46,4 +46,8 @@ module todo_list::todo_list{
         let list = create_list(ctx);
         transfer::transfer(list, tx_context::sender(ctx));
     }
+
+    public entry fun add_task_entry(list: &mut TodoList, title: vector<u8>){
+        
+    }
 }
