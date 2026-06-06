@@ -50,7 +50,7 @@ module todo_list::todo_list{
     public entry fun add_task_entry(list: &mut TodoList, title: vector<u8>){
         add_task(list, title);
     }
-    
+
     public fun complete_task_entry(list: &mut TodoList,index: u64) {
         complete_task(list, index);
     }
@@ -58,6 +58,7 @@ module todo_list::todo_list{
     public fun remove_task_entry(list: &mut TodoList,index: u64) {
         remove_task(list, index);
     }
+    
     public fun task_count(list: &TodoList): u64 {
         vector::length(&list.tasks)
     }
