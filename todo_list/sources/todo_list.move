@@ -35,4 +35,9 @@ module todo_list::todo_list{
         let task = Task {title, completed: false};
         vector::push_back(&mut list.tasks, task);
     }
+
+    public fun complete_task(list:&mut TodoList, index: u64){
+        let task = vector::borrow_mut(&mut list.tasks, index);
+        task.completed = true;
+    }
 }
