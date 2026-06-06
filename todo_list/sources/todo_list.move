@@ -42,5 +42,7 @@ module todo_list::todo_list{
         vector::remove( &mut list.tasks,index);
     }
 
-    public entry fun create_todo_list(ctx:&mut TxContext);
+    public entry fun create_todo_list(ctx:&mut TxContext){
+        let list = create_list(ctx);
+    }
 }
