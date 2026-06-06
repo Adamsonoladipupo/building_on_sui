@@ -24,13 +24,8 @@ module todo_list::todo_list{
         tasks: vector<Task>
     }
 
-    public fun create_list (
-        ctx: &mut TxContext
-    ) : TodoList {
-        TodoList {
-            id: object::new(ctx),
-            tasks: vector[]
-        }
+    public fun create_list (ctx: &mut TxContext) : TodoList {
+        TodoList {id: object::new(ctx),tasks: vector[]}
     }
 
     public fun add_task(list: &mut TodoList, title: vector<u8>){
@@ -46,4 +41,6 @@ module todo_list::todo_list{
     public fun remove_task(list: &mut TodoList,index: u64) {
         vector::remove( &mut list.tasks,index);
     }
+
+    public entry fun create_todo_list(ctx:&mut)
 }
