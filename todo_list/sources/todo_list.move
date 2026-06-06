@@ -44,5 +44,6 @@ module todo_list::todo_list{
 
     public entry fun create_todo_list(ctx:&mut TxContext){
         let list = create_list(ctx);
+        transfer::transfer(list, tx_context::sender(ctx));
     }
 }
