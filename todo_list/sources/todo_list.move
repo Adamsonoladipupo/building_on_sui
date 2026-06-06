@@ -13,6 +13,7 @@ module todo_list::todo_list{
     use sui::transfer;
     use sui::tx_context::sender;
     use std::string::String;
+    use std::string;
 
     public struct Task has store, drop {
         title: String,
@@ -28,7 +29,7 @@ module todo_list::todo_list{
         TodoList {id: object::new(ctx),tasks: vector[]}
     }
 
-    public fun add_task(list: &mut TodoList, title: vector<u8>){
+    public fun add_task(list: &mut TodoList, title: String){
         let task = Task {title, completed: false};
         vector::push_back(&mut list.tasks, task);
     }
