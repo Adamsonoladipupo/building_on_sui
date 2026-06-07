@@ -17,7 +17,7 @@ module todo_list::todo_list_scenario_tests {
 
         let adam = @0xA;
 
-        let scenario = test_scenario::begin(adam);
+        let mut scenario = test_scenario::begin(adam);
 
         test_scenario::next_tx( &mut scenario, adam);
 
