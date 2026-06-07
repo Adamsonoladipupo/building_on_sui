@@ -11,9 +11,6 @@ module todo_list::todo_list_test{
             string::utf8(b"Learn Move")
         );
 
-        assert!(
-            !todo_list::task_completed(&task),
-            0
-        );
+        assert!(!todo_list::task_completed(&task),0);
     }
 }
