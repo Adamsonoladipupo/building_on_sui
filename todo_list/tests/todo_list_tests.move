@@ -26,21 +26,13 @@ module todo_list::todo_list_test{
     #[test]
     fun test_different_titles() {
 
-        let task1 =
-            todo_list::new_task(
-                string::utf8(b"Task A")
-            );
+        let task1 = todo_list::new_task(
+                string::utf8(b"Task A"));
 
-        let task2 =
-            todo_list::new_task(
-                string::utf8(b"Task B")
-            );
+        let task2 = todo_list::new_task(
+                string::utf8(b"Task B"));
 
-        assert!(
-            todo_list::task_title(&task1)
-                !=
-            todo_list::task_title(&task2),
-            2
-        );
+        assert!(todo_list::task_title(&task1) !=
+            todo_list::task_title(&task2),2);
     }
 }
