@@ -19,10 +19,7 @@ module todo_list::todo_list_scenario_tests {
 
         let scenario = test_scenario::begin(adams);
 
-        test_scenario::next_tx(
-            &mut scenario,
-            adams
-        );
+        test_scenario::next_tx( &mut scenario, adams);
 
         todo_list::create_todo_list(
             test_scenario::ctx(&mut scenario)
