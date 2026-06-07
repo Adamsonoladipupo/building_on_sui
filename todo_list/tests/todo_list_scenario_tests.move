@@ -6,7 +6,9 @@ module todo_list::todo_list_scenario_tests {
 
     #[test]
     fun test_scenario_setup(){
-        let adam
+        let adam = @0xA;
+        let scenario = test_scenario::begin(adam);
+        
     }
 
 }
