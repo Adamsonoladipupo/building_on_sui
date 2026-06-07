@@ -19,9 +19,28 @@ module todo_list::todo_list_test{
         let task = todo_list::new_task(
             string::utf8(b"Learn Move")
         );
-
         let expected = string::utf8(b"Learn Move");
-
         assert!(todo_list::task_title(&task) == &expected,1);
+    }
+
+    #[test]
+    fun test_different_titles() {
+
+        let task1 =
+            todo_list::new_task(
+                string::utf8(b"Task A")
+            );
+
+        let task2 =
+            todo_list::new_task(
+                string::utf8(b"Task B")
+            );
+
+        assert!(
+            todo_list::task_title(&task1)
+                !=
+            todo_list::task_title(&task2),
+            2
+        );
     }
 }
