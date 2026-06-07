@@ -15,6 +15,12 @@ module todo_list::todo_list{
         tasks: vector<Task>
     }
 
+    public fun task_completed(task: &Task): bool {
+        task.completed
+    }
+
+    
+
     public fun create_list (ctx: &mut TxContext) : TodoList {
         TodoList {id: object::new(ctx),tasks: vector[]}
     }
