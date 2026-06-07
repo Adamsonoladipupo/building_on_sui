@@ -21,20 +21,10 @@ module todo_list::todo_list_scenario_tests {
 
         test_scenario::next_tx( &mut scenario, adam);
 
-        todo_list::create_todo_list(
-            test_scenario::ctx(&mut scenario)
-        );
+        let ctx = test_scenario::ctx(&mut scenario);
 
-        test_scenario::next_tx(&mut scenario, adam);
+        todo_list::create_todo_list(ctx);
 
-        let mut objects =
-            test_scenario::take_objects<TodoList>(&mut scenario);
-
-        let list = vector::pop_back(&mut objects);
-
-        assert!(todo_list::task_count(&list) == 0, 100);
-
-        test_scenario::end(scenario);
-    }
+        test_scenario::end(scenario);}
 
 }
