@@ -15,14 +15,13 @@ module todo_list::todo_list_scenario_tests {
     #[test]
     fun test_create_todo_list() {
 
-        let alice = @0xA;
+        let adams = @0xA;
 
-        let scenario =
-            test_scenario::begin(alice);
+        let scenario = test_scenario::begin(adams);
 
         test_scenario::next_tx(
             &mut scenario,
-            alice
+            adams
         );
 
         todo_list::create_todo_list(
