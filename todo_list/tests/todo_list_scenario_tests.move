@@ -25,6 +25,8 @@ module todo_list::todo_list_scenario_tests {
             test_scenario::ctx(&mut scenario)
         );
 
+        test_scenario::next_tx(&mut scenario, adam);
+
         test_scenario::end(scenario);
     }
 
