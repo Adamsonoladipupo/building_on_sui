@@ -12,5 +12,24 @@ module todo_list::todo_list_scenario_tests {
         test_scenario::end(scenario);
     }
 
-    
+    #[test]
+    fun test_create_todo_list() {
+
+        let alice = @0xA;
+
+        let scenario =
+            test_scenario::begin(alice);
+
+        test_scenario::next_tx(
+            &mut scenario,
+            alice
+        );
+
+        todo_list::create_todo_list(
+            test_scenario::ctx(&mut scenario)
+        );
+
+        test_scenario::end(scenario);
+    }
+
 }
