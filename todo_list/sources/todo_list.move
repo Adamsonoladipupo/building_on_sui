@@ -59,4 +59,13 @@ module todo_list::todo_list{
         task.completed
     }
 
+    public fun new_task(
+    title: String
+): Task {
+    Task {
+        title,
+        completed: false
+    }
+}
+
 }
