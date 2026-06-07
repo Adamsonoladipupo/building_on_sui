@@ -19,7 +19,9 @@ module todo_list::todo_list{
         task.completed
     }
 
-    
+    public fun task_title(task: &Task): &String {
+        &task.title
+    }
 
     public fun create_list (ctx: &mut TxContext) : TodoList {
         TodoList {id: object::new(ctx),tasks: vector[]}
