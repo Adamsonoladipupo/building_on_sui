@@ -20,7 +20,7 @@ module todo_list::todo_list{
     }
 
     public fun add_task(list: &mut TodoList, title: String){
-        let task = Task {title, completed: false};
+        let task = new_task(title);
         vector::push_back(&mut list.tasks, task);
     }
 
@@ -59,13 +59,11 @@ module todo_list::todo_list{
         task.completed
     }
 
-    public fun new_task(
-    title: String
-): Task {
-    Task {
-        title,
-        completed: false
+    public fun new_task(title: String): Task {
+        Task {
+            title,
+            completed: false
+        }
     }
-}
 
 }
