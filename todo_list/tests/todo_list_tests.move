@@ -8,8 +8,6 @@ module todo_list::todo_list_test{
         let list = todo_list::create_list(&mut ctx);
         
         assert!(
-            todo_list::task_count(&list) == 0,
-            0
-        );
+            todo_list::task_count(&list) == 0,0);
     } 
 }
