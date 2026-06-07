@@ -14,18 +14,14 @@ module todo_list::todo_list_test{
     }
 
     #[test]
-fun test_task_has_title() {
+    fun test_task_has_title() {
 
-    let task = todo_list::new_task(
-        string::utf8(b"Learn Move")
-    );
+        let task = todo_list::new_task(
+            string::utf8(b"Learn Move")
+        );
 
-    let expected =
-        string::utf8(b"Learn Move");
+        let expected = string::utf8(b"Learn Move");
 
-    assert!(
-        todo_list::task_title(&task) == &expected,
-        1
-    );
-}
+        assert!(todo_list::task_title(&task) == &expected,1);
+    }
 }
