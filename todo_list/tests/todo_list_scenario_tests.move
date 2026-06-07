@@ -30,6 +30,9 @@ module todo_list::todo_list_scenario_tests {
         let mut objects =
             test_scenario::take_objects<TodoList>(&mut scenario);
 
+        let list = vector::pop_back(&mut objects);
+
+        assert!(todo_list::task_count(&list) == 0, 100);
 
         test_scenario::end(scenario);
     }
